@@ -1,24 +1,23 @@
-import subprocess
 import smtplib
-import onionGpio
+import RPi.GPIO as GPIO
 import time
 from email.mime.text import MIMEText
 
-pin1=onionGpio.OnionGpio(1)
+GPIO.setmode(GPIO.BCM)
 
-status=pin1.setInputDirection()
+INPUT_PIN=4
 
-#res=subprocess.check_output(["gpioctl","dirout","3"])
-#res1=subprocess.check_output(["gpioctl","dirout-high","3"])
+GPIO.setup(INPUT_PIN,GPIO.IN)
 
 while True:
- value=pin1.getValue()
 
- #print(value)
+ value=GPIO.input(INPUT_PIN)
 
- if int(value)==1:
+ print(value)
 
-  print("El switch esta en  ON, enviando email de alerta...")
+ if value==True:
+
+  print("El switch esta en  ON, enviando email de alerta....")
   msg=MIMEText("La luz del cuarto esta encendida  ")
   
  else:
@@ -28,7 +27,7 @@ while True:
 
  server=smtplib.SMTP('smtp.gmail.com',587)
  server.starttls()
- server.login('claseiot@gmail.com','pregunte la clave a su profesor')
+ server.login('claseiot@gmail.com','Pregunte la clave al profesor')
  msg['Subject']="Aviso de Iot Unipanamericana"
  server.sendmail("claseiot@gmail.com","correodestino@loquesea.com",msg.as_string())
  print("Email enviado")
