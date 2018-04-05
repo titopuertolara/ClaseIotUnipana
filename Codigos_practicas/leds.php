@@ -21,7 +21,7 @@
                  echo "LED apagado";
          }
           else if(isset($_GET['blink'])){
-         echo "LED parpadeando";
+         
          $gpio_on = shell_exec("/usr/local/bin/gpio -g write 4 1");
          sleep(1);
          $gpio_off = shell_exec("/usr/local/bin/gpio -g write 4 0");
