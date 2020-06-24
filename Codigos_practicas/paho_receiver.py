@@ -17,7 +17,7 @@ def on_message(client,userdata,msg):
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(2,GPIO.OUT)
 
-broker_url = "25.139.120.64"
+broker_url = "IP"
 broker_port = 1883
 client=mqtt.Client()
 client.on_message=on_message

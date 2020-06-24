@@ -2,10 +2,10 @@ import tweepy
 import paho.mqtt.client as mqtt
 import time
 
-API_key='5UC24FVp7SZobjotgf4ddMHDD'
-API_secret_key='etZcWezCh9QrNeSUmM8OpuHiiMqoKrFdiHKq0AqGyYEOKJJajd'
-Access_token='728052118893023233-YhqdojpmzBePnK9CnzszMx5jkVnSqbe'
-Access_token_secret='UGWw0tQ23DWGp30lWAyxdcA0eyQRMWID3DoQjiqqfGSoL'
+API_key=''
+API_secret_key=''
+Access_token=''
+Access_token_secret=''
 auth=tweepy.OAuthHandler(API_key,API_secret_key)
 auth.set_access_token(Access_token,Access_token_secret)
 

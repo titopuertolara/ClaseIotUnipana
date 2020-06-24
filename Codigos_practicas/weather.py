@@ -2,7 +2,7 @@ import requests
 import paho.mqtt.client as mqtt
 import time
 location="Bogota"
-api_key="846b0dceddfc94408e12502aad4a2a68"
+api_key=""
 #lat=4.6209279
 #lon=-74.0742169
 url = "https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}".format(location, api_key)
@@ -18,7 +18,7 @@ try:
 		sensacion_t=info['main']['feels_like']
 		v_viento=info['wind']['speed']
 		print(temp,hum,sensacion_t,v_viento)
-		broker_url = "25.119.63.148"
+		broker_url = "IP"
 		broker_port = 1883
 		client = mqtt.Client()
 		client.connect(broker_url, broker_port)

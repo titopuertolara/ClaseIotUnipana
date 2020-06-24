@@ -18,7 +18,7 @@ def publish(client,topic):
 
 
 
-broker_url = "25.119.63.148"
+broker_url = "IP"
 broker_port = 1883
 client=mqtt.Client()
 client.connect(broker_url,broker_port)

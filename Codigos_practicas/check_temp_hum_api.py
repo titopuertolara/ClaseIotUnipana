@@ -7,7 +7,7 @@ import urllib.request
 import random
 import requests
 location="Tunja"
-api_key="846b0dceddfc94408e12502aad4a2a68"
+api_key="" #APIKEYweather
 #lat=4.6209279
 #lon=-74.0742169
 url = "https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}".format(location, api_key)
@@ -16,7 +16,7 @@ url = "https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={
 #Cambiar API_KEY por la clave generada en la plataforma
 pin=2
 
-baseUrl="https://api.thingspeak.com/update?api_key=P818G98UMJY7FT0D"
+baseUrl="https://api.thingspeak.com/update?api_key=API_KEY"
 while True:
   #hum ,temp =Adafruit_DHT.read_retry(sensor,pin)
 
